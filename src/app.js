@@ -9,6 +9,7 @@ console.log(__filename)
 console.log(path.join(__dirname,'../public'))
 
 const app = express()
+const port = process.env.PORT || 3000
 //Manage path
 staticDirPath=path.join(__dirname,'../public')
 viewPath=path.join(__dirname,'../templates/views')
@@ -85,6 +86,6 @@ app.get('*',(req,res)=>{
     res.render('404',{title:'404', name:'Rohit Soman',errorMsg:'Page Not Found!!'})
 
 })
-app.listen(3000,()=>{
-    console.log('Server up and running on port 3000')
+app.listen(port,()=>{
+    console.log('Server up and running on port:'+port)
 })
